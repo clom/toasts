@@ -1,0 +1,26 @@
+{
+  "name": "toasts",
+  "version": "0.1.0",
+  "description": "TOAST typescript API",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/clom/toasts.git"
+  },
+  "keywords": [],
+  "author": "kento nomiyama",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/clom/toasts/issues"
+  },
+  "homepage": "https://github.com/clom/toasts#readme",
+  "dependencies": {
+    "typescript": "^3.5.2"
+  },
+  "devDependencies": {
+    "@types/node": "^12.0.10"
+  }
+}
