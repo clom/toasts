@@ -69,5 +69,3 @@ typings/
 .env
 .next
 
-## build js
-dist/

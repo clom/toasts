@@ -19,7 +19,7 @@ https://docs.toast.com/en/TOAST/en/Overview/
 ## Install
 
 ```
-npm install clom/toasts
+npm i -g clom/toasts
 ```
 
 ```
