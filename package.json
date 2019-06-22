@@ -1,0 +1,35 @@
+{
+  "name": "toasts",
+  "version": "0.1.0",
+  "description": "TOAST typescript API",
+  "main": "index.js",
+  "scripts": {
+    "build": "gulp",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/clom/toasts.git"
+  },
+  "keywords": [],
+  "author": "kento nomiyama",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/clom/toasts/issues"
+  },
+  "homepage": "https://github.com/clom/toasts#readme",
+  "bin": {
+    "toasts": "./bin/toasts.js"
+  },
+  "dependencies": {
+    "axios": "^0.19.0"
+  },
+  "devDependencies": {
+    "@types/node": "^12.0.10",
+    "gulp": "^4.0.2",
+    "gulp-absolute-path": "^1.0.4",
+    "gulp-typescript": "^5.0.1",
+    "ts-loader": "^6.0.4",
+    "typescript": "^3.5.2"
+  }
+}
