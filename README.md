@@ -30,7 +30,7 @@ npm i -g toasts
 apache 2.0
 
 # want commiter!!
-This project will provided japanese or english.
+This project will provide Japanese or English.
 The topic reply in English is delayed because the Author is not good at English.
 
 ### For Japanese information.
