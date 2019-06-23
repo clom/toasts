@@ -17,6 +17,9 @@ exports.executeComputeApi = async (token, opts) => {
         case 'availability-zones':
             showAvailabilityZone(token);
             break;
+        case 'flavors':
+            showFlavors(token);
+            break;
         default:
             defaultHelp();
             break;
@@ -36,11 +39,26 @@ const showAvailabilityZone = async (token) => {
     const zoneModels = data.zones;
     console.log(JSON.stringify(zoneModels));
 };
+const showFlavors = async (token) => {
+    const { appKey } = auth_1.authHelper();
+    const authHttpClient = axios.axiosAuth(token);
+    const response = await authHttpClient.get(`/compute/v1.0/appkeys/${appKey}/flavors`);
+    if (response.status != 200) {
+        throw `Error response: ${response.status}`;
+    }
+    const data = response.data;
+    if (!data.header.isSuccessful && !data.flavors) {
+        throw `isFailed: ${data.header.resultMessage}`;
+    }
+    const flavorModels = data.flavors;
+    console.log(JSON.stringify(flavorModels));
+};
 const defaultHelp = () => {
     console.log('===== TOAST compute Service =====');
-    console.log('usage: toasts compute ${servcice} [options]');
+    console.log('usage: toasts compute ${service} [options]');
     console.log('');
     console.log('------ select serivces ------');
     console.log('availability-zones: show availbility zone information');
+    console.log('flavors: show instance flavors information');
     console.log('');
 };
