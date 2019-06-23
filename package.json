@@ -1,6 +1,6 @@
 {
   "name": "toasts",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "TOAST typescript API",
   "main": "index.js",
   "scripts": {
@@ -13,7 +13,7 @@
   },
   "keywords": [],
   "author": "kento nomiyama",
-  "license": "ISC",
+  "license": "Apache2.0",
   "bugs": {
     "url": "https://github.com/clom/toasts/issues"
   },
