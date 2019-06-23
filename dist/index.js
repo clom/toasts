@@ -10,11 +10,11 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const authService = __importStar(require("./service/auth"));
 const computeService = __importStar(require("./service/compute"));
 exports.command = async (argv) => {
-    const service = argv[0];
-    argv.splice(0, 1);
-    const options = argv;
-    const token = await authService.createToken();
     try {
+        const service = argv[0];
+        argv.splice(0, 1);
+        const options = argv;
+        const token = await authService.createToken();
         switch (service) {
             case 'token':
                 console.log(`TOAST TOKEN: ${token}`);

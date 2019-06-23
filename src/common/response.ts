@@ -4,6 +4,7 @@
 import * as access from 'model/access';
 import * as flavor from 'model/flavor';
 import * as header from 'model/header';
+import * as keyPair from 'model/keyPair';
 import * as zone from 'model/zone';
 
 export interface BaseModel {
@@ -20,4 +21,9 @@ export interface AvailabilityZoneModel extends BaseModel {
 
 export interface FlavorModel extends BaseModel {
   flavors: flavor.Model[];
+}
+
+export interface KeyPairModel extends BaseModel {
+  keypairs?: keyPair.Model[];
+  keypair?: keyPair.Model;
 }

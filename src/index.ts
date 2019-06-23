@@ -9,15 +9,16 @@ import * as authService from 'service/auth';
 import * as computeService from 'service/compute';
 
 export const command = async (argv: string[]): Promise<void> => {
-  // service name
-  const service = argv[0];
-  argv.splice(0,1);
-
-  // options
-  const options = argv;
-  const token = await authService.createToken();
-
   try{
+    // service name
+    const service = argv[0];
+    argv.splice(0,1);
+
+    // options
+    const options = argv;
+    const token = await authService.createToken();
+
+
     // service checker
     switch (service) {
       case 'token':
