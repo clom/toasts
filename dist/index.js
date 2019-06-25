@@ -8,15 +8,19 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const authService = __importStar(require("./service/auth"));
+const computeService = __importStar(require("./service/compute"));
 exports.command = async (argv) => {
-    const service = argv[0];
-    argv.splice(0, 1);
-    const options = argv;
     try {
+        const service = argv[0];
+        argv.splice(0, 1);
+        const options = argv;
+        const token = await authService.createToken();
         switch (service) {
             case 'token':
-                const token = await authService.createToken();
                 console.log(`TOAST TOKEN: ${token}`);
+                break;
+            case 'compute':
+                await computeService.executeComputeApi(token, options);
                 break;
             default:
                 console.log('INFO: This service is undefined.');

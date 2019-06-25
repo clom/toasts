@@ -19,3 +19,13 @@ exports.axios = axios_1.default.create({
     },
     responseType: 'json'
 });
+exports.axiosAuth = (token) => {
+    return axios_1.default.create({
+        baseURL: constants.API_ENDPOINT,
+        headers: {
+            'Content-Type': 'application/json',
+            'X-Auth-Token': token
+        },
+        responseType: 'json'
+    });
+};
