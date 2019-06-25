@@ -1,7 +1,7 @@
 {
   "name": "toasts",
-  "version": "0.1.1",
-  "description": "TOAST typescript API",
+  "version": "0.1.2",
+  "description": "TOAST typescript Client",
   "main": "index.js",
   "scripts": {
     "build": "gulp",
@@ -13,7 +13,7 @@
   },
   "keywords": [],
   "author": "kento nomiyama",
-  "license": "ISC",
+  "license": "Apache2.0",
   "bugs": {
     "url": "https://github.com/clom/toasts/issues"
   },

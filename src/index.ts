@@ -6,21 +6,26 @@
  */
 
 import * as authService from 'service/auth';
+import * as computeService from 'service/compute';
 
 export const command = async (argv: string[]): Promise<void> => {
-  // service name
-  const service = argv[0];
-  argv.splice(0,1);
-
-  // options
-  const options = argv;
-
   try{
+    // service name
+    const service = argv[0];
+    argv.splice(0,1);
+
+    // options
+    const options = argv;
+    const token = await authService.createToken();
+
+
     // service checker
     switch (service) {
       case 'token':
-        const token = await authService.createToken();
         console.log(`TOAST TOKEN: ${token}`);
+        break;
+      case 'compute':
+        await computeService.executeComputeApi(token, options);
         break;
       default:
         console.log('INFO: This service is undefined.');
