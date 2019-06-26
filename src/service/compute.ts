@@ -233,5 +233,6 @@ const defaultHelp = () => {
   console.log('------ select serivces ------');
   console.log('availability-zones: show availbility zone information');
   console.log('flavors: show instance flavors information');
+  console.log('keypairs: manage key pairs');
   console.log('');
 };
