@@ -5,7 +5,11 @@
  */
 import * as os from 'os';
 
-export const API_ENDPOINT = 'https://api-compute.cloud.toast.com';
+export const API_ENDPOINT = {
+  COMPUTE: 'https://api-compute.cloud.toast.com',
+  DNSPLUS: 'https://api-dnsplus.cloud.toast.com'
+};
+
 export const CREDENTIAL_FILE = `${ os.userInfo().homedir }/.toasts`;
 
 export const RESULT_CODE = {

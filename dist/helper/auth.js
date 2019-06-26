@@ -19,5 +19,6 @@ exports.authHelper = () => {
         password: config.password
     };
     let appKey = config.appkey;
-    return { authModel, appKey };
+    let dnsAppKey = config.dnsAppKey;
+    return { authModel, appKey, dnsAppKey };
 };

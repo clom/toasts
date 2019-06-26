@@ -8,7 +8,10 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const os = __importStar(require("os"));
-exports.API_ENDPOINT = 'https://api-compute.cloud.toast.com';
+exports.API_ENDPOINT = {
+    COMPUTE: 'https://api-compute.cloud.toast.com',
+    DNSPLUS: 'https://api-dnsplus.cloud.toast.com'
+};
 exports.CREDENTIAL_FILE = `${os.userInfo().homedir}/.toasts`;
 exports.RESULT_CODE = {
     SUCCESS: 0,
