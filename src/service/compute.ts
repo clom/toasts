@@ -11,6 +11,7 @@ import * as axios from 'helper/axios';
 import * as flavor from 'model/flavor';
 import * as keyPair from 'model/keyPair';
 import * as zone from 'model/zone';
+import * as print from 'utils/print';
 
 export const executeComputeApi = async (token: string, opts: string[]): Promise<void> => {
   let options = opts;
@@ -52,7 +53,7 @@ const showAvailabilityZone = async(token: string): Promise<void> => {
 
   const zoneModels : zone.Model[] = data.zones;
 
-  console.log(JSON.stringify(zoneModels));
+  print.toJson(zoneModels);
 };
 
 const showFlavors = async(token: string): Promise<void> => {
@@ -71,7 +72,7 @@ const showFlavors = async(token: string): Promise<void> => {
 
   const flavorModels : flavor.Model[] = data.flavors;
 
-  console.log(JSON.stringify(flavorModels));
+  print.toJson(flavorModels);
 };
 
 const executeKeyPairs = async (token: string, action: string, args: string[]): Promise<void> => {
@@ -153,11 +154,7 @@ const showKeyPairs = async(args: ShowKeyPairsArgument): Promise<void> => {
 
   const KeyPairModel = data.keypairs;
 
-  if (!KeyPairModel) {
-    console.log([]);
-  } else {
-    console.log(JSON.stringify(KeyPairModel));
-  }
+  print.toJson(KeyPairModel);
 };
 
 interface CreateKeyPairArguments {
@@ -193,7 +190,7 @@ const createKeyPair = async(args: CreateKeyPairArguments): Promise<void> => {
   const KeyPairModel = data.keypair;
 
   if (KeyPairModel) {
-    console.log(JSON.stringify(KeyPairModel));
+    print.toJson(KeyPairModel);
   }
 };
 

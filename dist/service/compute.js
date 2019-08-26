@@ -13,6 +13,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const fs_1 = __importDefault(require("fs"));
 const auth_1 = require("../helper/auth");
 const axios = __importStar(require("../helper/axios"));
+const print = __importStar(require("../utils/print"));
 exports.executeComputeApi = async (token, opts) => {
     let options = opts;
     const service = options[0];
@@ -46,7 +47,7 @@ const showAvailabilityZone = async (token) => {
         throw `isFailed: ${data.header.resultMessage}`;
     }
     const zoneModels = data.zones;
-    console.log(JSON.stringify(zoneModels));
+    print.toJson(zoneModels);
 };
 const showFlavors = async (token) => {
     const { appKey } = auth_1.authHelper();
@@ -60,7 +61,7 @@ const showFlavors = async (token) => {
         throw `isFailed: ${data.header.resultMessage}`;
     }
     const flavorModels = data.flavors;
-    console.log(JSON.stringify(flavorModels));
+    print.toJson(flavorModels);
 };
 const executeKeyPairs = async (token, action, args) => {
     const opts = {};
@@ -131,12 +132,7 @@ const showKeyPairs = async (args) => {
         throw `isFailed: ${data.header.resultMessage}`;
     }
     const KeyPairModel = data.keypairs;
-    if (!KeyPairModel) {
-        console.log([]);
-    }
-    else {
-        console.log(JSON.stringify(KeyPairModel));
-    }
+    print.toJson(KeyPairModel);
 };
 ;
 const createKeyPair = async (args) => {
@@ -159,7 +155,7 @@ const createKeyPair = async (args) => {
     }
     const KeyPairModel = data.keypair;
     if (KeyPairModel) {
-        console.log(JSON.stringify(KeyPairModel));
+        print.toJson(KeyPairModel);
     }
 };
 ;
