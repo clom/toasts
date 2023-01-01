@@ -29,7 +29,7 @@
     "gulp": "^4.0.2",
     "gulp-absolute-path": "^1.0.4",
     "gulp-typescript": "^5.0.1",
-    "ts-loader": "^6.0.4",
+    "ts-loader": "^9.4.2",
     "typescript": "^3.5.2"
   }
 }
